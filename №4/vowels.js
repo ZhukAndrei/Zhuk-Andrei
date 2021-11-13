@@ -6,7 +6,7 @@
 
 //const countVowels = getVolwes => Array.from(getVolwes).filter(letter => 'и'.includes(letter)).length;
  // alert(countVowels());
- let count = prompt("Введите любую фразу на русском языке", "Привет!");
+ let count = prompt("Введите любую фразу на русском языке", "Привет!").toLowerCase();
  const countVowels = str => Array.from(str).filter(count => 'аеёиоуыэюя'.includes(count)).length;
 
 alert(countVowels(count));
