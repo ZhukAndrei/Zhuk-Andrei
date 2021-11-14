@@ -60,42 +60,63 @@ alert(countVowels(count));
 
 
 
-var count = prompt("Введите любую фразу на русском языке", "Привет!").toString().toLowerCase();
+var count = prompt("Введите любую фразу на русском языке", "Привет!")
+  .toString()
+  .toLowerCase();
 inputChar = prompt("Введите гласную букву").toString().toLowerCase();
-  function countVowels(str) {
-    if (inputChar == '') {
-    return Array.from(str).filter(count => 'аеёиоуыэюя'.includes(count)).length;
-  } if (inputChar === 'а') {
-    return Array.from(str).filter(count => 'а'.includes(count)).length;
-  } if (inputChar === 'е') {
-    return Array.from(str).filter(count => 'е'.includes(count)).length;
-  } if (inputChar === 'ё') {
-    return Array.from(str).filter(count => 'ё'.includes(count)).length; 
-  } if (inputChar === 'и') {
-    return Array.from(str).filter(count => 'и'.includes(count)).length;
-  } if (inputChar === 'у') {
-    return Array.from(str).filter(count => 'у'.includes(count)).length;
-  } if (inputChar === 'о') {
-    return Array.from(str).filter(count => 'о'.includes(count)).length; 
-  } if (inputChar === 'ы') {
-    return Array.from(str).filter(count => 'ы'.includes(count)).length; 
-  } if (inputChar === 'э') {
-    return Array.from(str).filter(count => 'э'.includes(count)).length;
-  } if (inputChar === 'ю') {
-    return Array.from(str).filter(count => 'ю'.includes(count)).length;
-  } if (inputChar === 'я') {
-    return Array.from(str).filter(count => 'я'.includes(count)).length; 
-    } else {
-      alert("Вы ввели недопустимое значение");
-      }
-    
-  // } else if (inputChar === "и") {
+function countVowels(str) {
+  if (inputChar == "") {
+    return Array.from(str).filter((count) => "аеёиоуыэюя".includes(count))
+      .length;
+  }
+  if (inputChar === "а") {
+    return Array.from(str).filter((count) => "а".includes(count)).length;
+  }
+  if (inputChar === "е") {
+    return Array.from(str).filter((count) => "е".includes(count)).length;
+  }
+  if (inputChar === "ё") {
+    return Array.from(str).filter((count) => "ё".includes(count)).length;
+  }
+  if (inputChar === "и") {
+    return Array.from(str).filter((count) => "и".includes(count)).length;
+  }
+  if (inputChar === "у") {
+    return Array.from(str).filter((count) => "у".includes(count)).length;
+  }
+  if (inputChar === "о") {
+    return Array.from(str).filter((count) => "о".includes(count)).length;
+  }
+  if (inputChar === "ы") {
+    return Array.from(str).filter((count) => "ы".includes(count)).length;
+  }
+  if (inputChar === "э") {
+    return Array.from(str).filter((count) => "э".includes(count)).length;
+  }
+  if (inputChar === "ю") {
+    return Array.from(str).filter((count) => "ю".includes(count)).length;
+  }
+  if (inputChar === "я") {
+    return Array.from(str).filter((count) => "я".includes(count)).length;
+  } else {
+    alert("Вы ввели недопустимое значение");
+  }
+}
+alert(countVowels(count));
+
+
+
+
+
+// } else if (inputChar === "и") {
   //    Array.from(str).filter(count => String(inputChar()).includes(count)).length;
   // } else {
   //   alert(countVowels(count));
-  
-   };
-   alert(countVowels(count));
+
+
+
+
+
   // inputChar === 'е' ||
   // inputChar === 'ё' ||
   // inputChar === 'и' ||
