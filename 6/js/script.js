@@ -1,4 +1,4 @@
-const animals = [{ name: "", color: "", age: "", voice: "" }];
+const animals = [{ name: '', color: "", age: "", voice: "" }];
 
 class Animal {
   constructor(name, color, age, voice) {
@@ -25,12 +25,26 @@ const animal2 = new Animal("Dog", "black-white", "7", "woof");
 const animal3 = new Animal("Horse", "black", "6", "neigh");
 const animal4 = new Animal("Pig", "pink", "1", "oink");
 const animal5 = new Animal("Cow", "white", "3", "moo");
+let objectAnimals = [
+    animal1,
+    animal2,
+    animal3,
+    animal4,
+    animal5
+];
+// console.log(animal1),
+// console.log(animal2),
+// console.log(animal3),
+// console.log(animal4),
+// console.log(animal5),
+console.log(objectAnimals);
+// function animalsFabric(animals) {
+    
+// }
 
-console.log(animal1);
-console.log(animal2);
-console.log(animal3);
-console.log(animal4);
-console.log(animal5);
+// let objectAnimals = [new Animal];
+// objectAnimals.push(animal1, animal2, animal3, animal4, animal5);
+// console.log(objectAnimals);
 
 
 
@@ -42,3 +56,6 @@ console.log(animal5);
     //return objectAnimals
   
 
+
+
+//}
