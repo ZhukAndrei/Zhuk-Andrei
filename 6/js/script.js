@@ -7,19 +7,7 @@ class Animal {
     this.age = age;
     this.voice = voice;
   }
-  /*nameAnimal() {
-    return this.name;
   }
-  colorAnimal() {
-    return this.color;
-  }
-  ageAnimal() {
-    return this.age;
-  }
-  voiceAnimal() {
-    return this.voice;
-  }*/
-}
 const animal1 = new Animal("Cat", "ginger", "2", "meow");
 const animal2 = new Animal("Dog", "black-white", "7", "woof");
 const animal3 = new Animal("Horse", "black", "6", "neigh");
@@ -32,30 +20,5 @@ let objectAnimals = [
     animal4,
     animal5
 ];
-// console.log(animal1),
-// console.log(animal2),
-// console.log(animal3),
-// console.log(animal4),
-// console.log(animal5),
+
 console.log(objectAnimals);
-// function animalsFabric(animals) {
-    
-// }
-
-// let objectAnimals = [new Animal];
-// objectAnimals.push(animal1, animal2, animal3, animal4, animal5);
-// console.log(objectAnimals);
-
-
-
-//function animalsFabric(animals) {
-//
-//}
-
-    //Что-то делаем с массивом
-    //return objectAnimals
-  
-
-
-
-//}
