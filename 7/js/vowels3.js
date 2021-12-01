@@ -1,9 +1,8 @@
-const count = prompt("Введите любую фразу на русском языке", "Привет!")
-  .toString()
-  .toLowerCase();
-const inputChar = prompt("Введите гласную букву").toString().toLowerCase();
+const count = "";
+const inputChar = "";
 const arrayRusVowels = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"];
-function countVowels(str) {
+function countVowels() {
+  const str = this;
   if (inputChar == "") {
     return Array.from(str).filter((count) => "аеёиоуыэюя".includes(count))
       .length;
@@ -14,4 +13,4 @@ function countVowels(str) {
     alert("Вы ввели недопустимое значение");
   }
 }
-alert(countVowels(count));
+String.prototype.countVowels = countVowels;
