@@ -1,4 +1,7 @@
  const constUL = document.getElementById('ulList');
+ const constLI = document.getElementsByTagName('li');
+ const div = document.getElementsByTagName('div');
+ 
 
 constUL.addEventListener("click", (event) =>{
   if  (event.ctrlKey || event.metaKey) { 
@@ -7,7 +10,15 @@ constUL.addEventListener("click", (event) =>{
   if  (event.shiftKey) { 
     event.target.className = "";
     }
-  
+    if (event.ctrlKey && event.shiftKey || event.metaKey && event.shiftKey) {   
+      let select = document.querySelectorAll('.background');
+      for(let elem of select) {
+        elem.classList.remove('background');
+      }
+    }
+
+   });
+
 
 
 
@@ -29,5 +40,5 @@ constUL.addEventListener("click", (event) =>{
   //     for(let elem of select) {
   //       elem.classList.remove('background')
   // } }
-   });
+  
  
