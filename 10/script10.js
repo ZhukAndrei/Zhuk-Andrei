@@ -4,6 +4,10 @@ constUL.addEventListener("click", (event) =>{
   if  (event.ctrlKey || event.metaKey) { 
   event.target.className = "background";
   }
+  if  (event.shiftKey) { 
+    event.target.className = "";
+    }
+  
 
 
 
