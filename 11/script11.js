@@ -16,9 +16,11 @@ const userCard = (type, name) => {
 <li>${name}</li>
 </ul>`;
 };
-const formHTML = formArray.map((user) => {
-  return userCard(user.type, user.name);
-}).join('');
+const formHTML = formArray
+  .map((user) => {
+    return userCard(user.type, user.name);
+  })
+  .join("");
 
 form.innerHTML = formHTML;
 
