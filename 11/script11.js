@@ -1,8 +1,8 @@
 //Создать функцию, для создания элементов формы, результат функции вставить в форму
 const formArray = [
-  {type: "Text1", name: "Name"},
-  {type: "text2", name: "Surname"},
-  {type: "text3", name: "Passwords"}
+  { type: "Text1", name: "Name" },
+  { type: "text2", name: "Surname" },
+  { type: "text3", name: "Passwords" },
 ];
 const form = document.createElement("form");
 form.classList.add("form");
@@ -10,18 +10,16 @@ form.classList.add("form");
 document.body.appendChild(form);
 
 const userCard = (type, name) => {
-    return `
+  return `
 <ul class = "userCardForm">
 <li>${type}</li>
 <li>${name}</li>
-</ul>`
+</ul>`;
 };
 const formHTML = formArray.map((user) => {
-  return userCard(user.type, user.name)
-});
+  return userCard(user.type, user.name);
+}).join('');
 
 form.innerHTML = formHTML;
-
-
 
 console.log(form);
