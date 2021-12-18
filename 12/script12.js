@@ -15,9 +15,6 @@ const objPromise = listPromise
   .then((creditCardData) => {
     //console.log(creditCardData);
 
-    let arrLength = Array.from(Object.entries(creditCardData)).length;
-    //console.log("arr lenght: " + arrLength);
-
     arrKeys = Object.keys(creditCardData);
     //console.log("Keys:", arrKeys);
 
