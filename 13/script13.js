@@ -1,138 +1,41 @@
 const innerUrlCompany =
   "https://random-data-api.com/api/company/random_company";
-const innerUrlUser = 
-  "https://random-data-api.com/api/users/random_user";
+const innerUrlUser = "https://random-data-api.com/api/users/random_user";
 const innerUrlNumber =
   "https://random-data-api.com/api/phone_number/random_phone_number";
 
-
-//== удалить тестовую стороку==
-  document.querySelector("div").innerText = "DEMO"
-//== удалить тестовую стороку==
+document.querySelector("div").innerText =
+  "Please, click the button \n to get the information \n you need..";
 
 const div = document.querySelector("div");
 const companyButton = document.querySelector("#company");
 const userButton = document.querySelector("#user");
 const phoneButton = document.querySelector("#phone");
-let innerUrl;
 
-
-company.addEventListener( "click" , () => {
-  innerUrl = innerUrlCompany;
+company.addEventListener("click", () => {
   div.innerText = "";
-   console.log(innerUrl);
-   div.innerText = "Company";
-   
-});
-//console.log(userButton);
-
-user.addEventListener( "click" , () => {
-  innerUrl = innerUrlUser;
-  div.innerText = "";
-    console.log(innerUrl);
-    div.innerText = "User";
+  fetch(innerUrlCompany)
+    .then((datajson) => datajson.json())
+    .then((data) => {
+      console.log("Name company: " + `${data.business_name}`);
+      div.innerText = "Name company: \n" + `${data.business_name}`;
+    });
 });
 
-phone.addEventListener( "click" , () => {
-  innerUrl = innerUrlNumber;
+user.addEventListener("click", () => {
   div.innerText = "";
-  console.log(innerUrl);
-  div.innerText = "Number";
+  fetch(innerUrlUser)
+    .then((datajson) => datajson.json())
+    .then((data) => {
+      div.innerText = "User name: \n" + `${data.username}`;
+    });
 });
 
-const listPromise = fetch(innerUrlCompany);
-const objPromise = listPromise
-  .then((datajson) => datajson.json())
-  .then((creditCardData) => {
-    console.log(creditCardData.business_name);
-    
-
-
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let innerUrl;
-
-// const companyButton = document.querySelector("#company");
-// companyButton.onmousedown = function() {
-//   div.innerText = "";
-//   innerUrl = innerUrlCompany;
-//   //mouseUp();
-//   //console.log(innerUrl);
-// };
-  
-
-// //console.log(innerUrl)
-
-// const userButton = document.querySelector("#user");
-// userButton.onmousedown = function() {
-//   div.innerText = "";
-//   innerUrl = innerUrlUser;
-//   //mouseUp()
-//   //console.log(innerUrl)
-// };
-
-// const phoneButton = document.querySelector("#phone");
-// phoneButton.onmousedown = function() {
-//   div.innerText = "";
-//   innerUrl = innerUrlNumber;
-//   //mouseUp()
-//   //console.log(innerUrl)
-// };
-// console.log(innerUrl)
-// // function mouseDown() {
-// //   div.innerText = ""; 
-  
-// // };
-
-// function mouseUp() {
-// //div.innerText = "";
-// console.log("Hi");
-// };
-
-
-
-// const listPromise = fetch(innerUrl);
-// const objPromise = listPromise
-//  .then((datajson) => datajson.json())
-//  .then((data) => {
-//      console.log(data);
-
-//     arrKeys = Object.keys(creditCardData);
-//     console.log("Keys:", arrKeys);
-
-//     arrNames = Object.values(creditCardData);
-//     console.log("Values:", arrNames);
-
-//     arrKeysNames = Object.entries(creditCardData);
-//     console.log("Key & Names:", arrKeysNames);
-
-// //     for (i = 0; i <= arrKeysNames.length - 1; i++) {
-// //       let p = document.createElement("p");
-
-// //       p.innerText = `${arrKeys[i]}` + ": " + `\n ${arrNames[i]}  \n \n`;
-// //       p.id = arrKeys[i];
-
-// //       ul.appendChild(p);
-// //     }
-//});
-// // form.appendChild(ul);
+phone.addEventListener("click", () => {
+  div.innerText = "";
+  fetch(innerUrlNumber)
+    .then((datajson) => datajson.json())
+    .then((data) => {
+      div.innerText = "Phone number: \n" + `${data.phone_number}`;
+    });
+});
