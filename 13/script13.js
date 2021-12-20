@@ -17,7 +17,6 @@ company.addEventListener("click", () => {
   fetch(innerUrlCompany)
     .then((datajson) => datajson.json())
     .then((data) => {
-      console.log("Name company: " + `${data.business_name}`);
       div.innerText = "Name company: \n" + `${data.business_name}`;
     });
 });
