@@ -58,7 +58,9 @@ height: 30px;
 
 .inputPassword {
     width: 390px; 
-    height: 30px;   
+    height: 30px; 
+    -webkit-text-security: disc;
+    font-family: caption;
     }
  
 #butSubmit {
