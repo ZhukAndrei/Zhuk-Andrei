@@ -1,24 +1,74 @@
-const div = document.createElement('div');
-document.body.appendChild(div);
-const fieldset = document.createElement('fieldset');
+const form = document.createElement("form");
+document.body.appendChild(form);
+
+const div = document.createElement("div");
+form.appendChild(div);
+
+const fieldset = document.createElement("fieldset");
 div.appendChild(fieldset);
-document.querySelector('fieldset').classList.add('fieldsetClass');
-const style = document.createElement('style');
-document.head.insertAdjacentElement('beforeend', style);
-style.innerHTML =`
+
+document.querySelector("fieldset").classList.add("fieldsetClass");
+
+const style = document.createElement("style");
+document.head.insertAdjacentElement("beforeend", style);
+
+const myLegend = document.createElement("legend");
+myLegend.innerText = "LogIn form";
+fieldset.appendChild(myLegend);
+
+const pLogin = document.createElement("pLogin");
+fieldset.appendChild(pLogin);
+pLogin.classList.add("pLogin");
+pLogin.innerHTML = "<b>Your login:</b><br>";
+const inputLogin = document.createElement("input");
+pLogin.insertAdjacentElement("beforeend", inputLogin);
+inputLogin.classList.add("inputLogin");
+
+const pPassword = document.createElement("pPassword");
+fieldset.appendChild(pPassword);
+pPassword.classList.add("pLogin");
+pPassword.innerHTML = "<b>Your password:</b><br>";
+const inputPassword = document.createElement("input");
+pPassword.insertAdjacentElement("beforeend", inputPassword);
+inputPassword.classList.add("inputPassword");
+
+const butSubmit = document.createElement('button');
+fieldset.appendChild(butSubmit);
+butSubmit.innerText = 'Submit';
+butSubmit.type = "submit";
+butSubmit.id = 'butSubmit';
+
+//======
+style.innerHTML = `
 .fieldsetClass {
-width: 300px;
-height: 100px;
+width: 400px;
+height: 170px;
 border-radius: 5px;
 background-color: rgb(245, 245, 245);
-}`
-const myLegend = document.createElement('legend');
-myLegend.innerText = 'LogIn form';
-fieldset.appendChild(myLegend);
-const inputLogin = document.createElement('input');
-// const inputPassword = document.createElement('input');
-// fields.appendChild(inputLogin);
-inputLogin.type = text;
-//inputLogin.innerHTML = ("LogIn :");
-//fields.insertAdjacentElement('beforeend', inputPassword);
+}
 
+.pLogin {
+    margin-block-start: 0em;
+    }
+
+.inputLogin {
+width: 390px; 
+height: 30px;  
+}
+
+.inputPassword {
+    width: 390px; 
+    height: 30px;   
+    }
+ 
+#butSubmit {
+    font-size: 1.5em;
+    width: 398px; 
+    height: 40px;
+    margin-top: 0.4em;
+    background-color: lightgreen;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+
+}`;
