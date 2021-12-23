@@ -22,7 +22,7 @@ pLogin.classList.add("pLogin");
 pLogin.innerHTML = "<b>Your login:</b><br>";
 const inputLogin = document.createElement("input");
 pLogin.insertAdjacentElement("beforeend", inputLogin);
-inputLogin.classList.add("inputLogin");
+inputLogin.id = "inputLogin";
 
 const pPassword = document.createElement("pPassword");
 fieldset.appendChild(pPassword);
@@ -30,7 +30,7 @@ pPassword.classList.add("pLogin");
 pPassword.innerHTML = "<b>Your password:</b><br>";
 const inputPassword = document.createElement("input");
 pPassword.insertAdjacentElement("beforeend", inputPassword);
-inputPassword.classList.add("inputPassword");
+inputPassword.id = "inputPassword";
 
 const butSubmit = document.createElement("button");
 fieldset.appendChild(butSubmit);
@@ -38,50 +38,41 @@ butSubmit.innerText = "Submit";
 butSubmit.type = "submit";
 butSubmit.id = "butSubmit";
 
-// ===== login verification
+// ===== login and password verification
 butSubmit.addEventListener("click", () => {
-  const validLenght = inputLogin.value.length;
-  if (validLenght >= 5) {
+  // login verification
+  const validLoginLenght = inputLogin.value.length;
+  if (validLoginLenght >= 5) {
     alert("Login введен правильно.");
   } else {
     alert("Login введен НЕ ПРАВИЛЬНО. Введите не менее 5 символов.");
   }
-});
 
-//===== password verification
-inputPassword.addEventListener("blur", (event) => {
-  let enterPassword = event.target.value;
-  const validChar = Array.from(enterPassword).toLowerCase(enterPassword);
-  const validNumber = validChar;
-  validNumberSum = 0;
+  // password verification
   const num = "0123456789";
-  validNumber.forEach((element) => {
+  const vowels = "abcdefghijklmnopqrstuvwxyz";
+  let validPasswordLength = inputPassword.value.length;
+  let arrInputPassword = Array.from(inputPassword.value.toLowerCase());
+
+  validNumberSum = 0;
+  arrInputPassword.forEach((element) => {
     if (num.search(element) != -1) {
       validNumberSum++;
-      console.log(validNumberSum);
     }
   });
 
-  console.log(validChar);
-  const vowels = "abcdefghijklmnopqrstuvwxyz";
-  validCharSum = 0;
-  validChar.forEach((element) => {
+  validVowelsSum = 0;
+  arrInputPassword.forEach((element) => {
     if (vowels.search(element) != -1) {
-      validCharSum++;
-      console.log(validCharSum);
+      validVowelsSum++;
     }
   });
-  if (validNumber == true && (validChar = true)) {
-    alert("правильно");
+
+  if (validNumberSum > 0 && validVowelsSum > 0 && validPasswordLength >= 5) {
+    alert("ПАРОЛЬ ВВЕДЕН ВЕРНО");
   } else {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      alert("НЕ правильно");
-    });
+    alert("НЕ ВЕРНО ВВЕДЕН ПАРОЛЬ. \n Пароль должен сожержать  не менее \n одной цифры и одной буквы. Общая длина пароля \n должна составлять не менее пяти символов");
   }
-  //console.log(enterPassword)
-  console.log(validLenght);
-  console.log(validNumber);
 });
 
 //====== CSS
@@ -97,17 +88,17 @@ background-color: rgb(245, 245, 245);
     margin-block-start: 0em;
     }
 
-.inputLogin {
+#inputLogin {
 width: 390px; 
 height: 30px;  
 border-radius: 5px;
 border: 1px solid;
 }
 
-.inputPassword {
+#inputPassword {
     width: 390px; 
     height: 30px; 
-    -webkit-text-security: disc;
+    
     font-family: caption;
     border-radius: 5px;
     border: 1px solid;
@@ -124,3 +115,4 @@ border: 1px solid;
     border: none;
 
 }`;
+//-webkit-text-security: disc;
