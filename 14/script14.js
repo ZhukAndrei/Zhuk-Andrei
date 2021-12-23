@@ -32,13 +32,59 @@ const inputPassword = document.createElement("input");
 pPassword.insertAdjacentElement("beforeend", inputPassword);
 inputPassword.classList.add("inputPassword");
 
-const butSubmit = document.createElement('button');
+const butSubmit = document.createElement("button");
 fieldset.appendChild(butSubmit);
-butSubmit.innerText = 'Submit';
+butSubmit.innerText = "Submit";
 butSubmit.type = "submit";
-butSubmit.id = 'butSubmit';
+butSubmit.id = "butSubmit";
 
-//======
+// ===== login verification
+butSubmit.addEventListener("click", () => {
+  const validLenght = inputLogin.value.length;
+  if (validLenght >= 5) {
+    alert("Login введен правильно.");
+  } else {
+    alert("Login введен НЕ ПРАВИЛЬНО. Введите не менее 5 символов.");
+  }
+});
+
+//===== password verification
+inputPassword.addEventListener("blur", (event) => {
+  let enterPassword = event.target.value;
+  const validChar = Array.from(enterPassword).toLowerCase(enterPassword);
+  const validNumber = validChar;
+  validNumberSum = 0;
+  const num = "0123456789";
+  validNumber.forEach((element) => {
+    if (num.search(element) != -1) {
+      validNumberSum++;
+      console.log(validNumberSum);
+    }
+  });
+
+  console.log(validChar);
+  const vowels = "abcdefghijklmnopqrstuvwxyz";
+  validCharSum = 0;
+  validChar.forEach((element) => {
+    if (vowels.search(element) != -1) {
+      validCharSum++;
+      console.log(validCharSum);
+    }
+  });
+  if (validNumber == true && (validChar = true)) {
+    alert("правильно");
+  } else {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      alert("НЕ правильно");
+    });
+  }
+  //console.log(enterPassword)
+  console.log(validLenght);
+  console.log(validNumber);
+});
+
+//====== CSS
 style.innerHTML = `
 .fieldsetClass {
 width: 400px;
@@ -54,6 +100,8 @@ background-color: rgb(245, 245, 245);
 .inputLogin {
 width: 390px; 
 height: 30px;  
+border-radius: 5px;
+border: 1px solid;
 }
 
 .inputPassword {
@@ -61,6 +109,8 @@ height: 30px;
     height: 30px; 
     -webkit-text-security: disc;
     font-family: caption;
+    border-radius: 5px;
+    border: 1px solid;
     }
  
 #butSubmit {
