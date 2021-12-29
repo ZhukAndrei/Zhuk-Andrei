@@ -1,6 +1,6 @@
 const form = document.createElement("form");
 document.body.appendChild(form);
-form.id = 'responseForm';
+form.id = "responseForm";
 
 const div = document.createElement("div");
 form.appendChild(div);
@@ -24,6 +24,10 @@ pLogin.innerHTML = "<b>Your login:</b><br>";
 const inputLogin = document.createElement("input");
 pLogin.insertAdjacentElement("beforeend", inputLogin);
 inputLogin.id = "inputLogin";
+let h2Login = document.createElement("h2");
+h2Login.id = "h2Login";
+pLogin.insertAdjacentElement("beforeend", h2Login);
+h2Login.style.display = "none";
 
 const pPassword = document.createElement("pPassword");
 fieldset.appendChild(pPassword);
@@ -32,6 +36,10 @@ pPassword.innerHTML = "<b>Your password:</b><br>";
 const inputPassword = document.createElement("input");
 pPassword.insertAdjacentElement("beforeend", inputPassword);
 inputPassword.id = "inputPassword";
+let h2Password = document.createElement("h2");
+h2Password.id = "h2Password";
+pPassword.insertAdjacentElement("beforeend", h2Password);
+h2Password.style.display = "none";
 
 const butSubmit = document.createElement("button");
 fieldset.appendChild(butSubmit);
@@ -39,20 +47,18 @@ butSubmit.innerText = "Submit";
 butSubmit.type = "submit";
 butSubmit.id = "butSubmit";
 
-
-
 // ===== login and password verification
 butSubmit.addEventListener("click", () => {
-  // login verification
+  // ===== login verification
   const validLoginLenght = inputLogin.value.length;
   if (validLoginLenght >= 5) {
     alert("Login введен правильно.");
-    localStorage.setItem('login', JSON.stringify(inputLogin.value));
+    localStorage.setItem("login", JSON.stringify(inputLogin.value));
   } else {
     alert("Login введен НЕ ПРАВИЛЬНО. Введите не менее 5 символов.");
   }
 
-  // password verification
+  // ===== password verification
   const num = "0123456789";
   const vowels = "abcdefghijklmnopqrstuvwxyz";
   let validPasswordLength = inputPassword.value.length;
@@ -73,29 +79,34 @@ butSubmit.addEventListener("click", () => {
   });
 
   if (validNumberSum > 0 && validVowelsSum > 0 && validPasswordLength >= 5) {
+    form.style.display = "none";
     alert("ПАРОЛЬ ВВЕДЕН ВЕРНО");
-    localStorage.setItem('password', JSON.stringify(inputPassword.value))
- 
-
-
+    localStorage.setItem("password", JSON.stringify(inputPassword.value));
   } else {
-    alert("НЕ ВЕРНО ВВЕДЕН ПАРОЛЬ. \n Пароль должен сожержать  не менее \n одной цифры и одной буквы. Общая длина пароля \n должна составлять не менее пяти символов");
+    alert(
+      "НЕ ВЕРНО ВВЕДЕН ПАРОЛЬ. \n Пароль должен сожержать  не менее \n одной цифры и одной буквы. Общая длина пароля \n должна составлять не менее пяти символов"
+    );
+  }
+
+  if (
+    localStorage.getItem("login") === null ||
+    localStorage.getItem("password") === null
+  ) {
+    alert("Не корректно введен логин и/или пароль");
+  } else {
+    responseForm.style.display = "none";
+    var readLogin = localStorage.getItem("login");
+    var readPassword = localStorage.getItem("password");
+    alert(`Thanks!\n Your login: ${readLogin}\n
+    Your password: ${readPassword}`);
+    responseForm.style.display = "block";
+
+    localStorage.clear();
   }
 });
-//===== request form
-
-
-
-responseForm.style.display = 'none';
-const readLogin = localStorage.getItem('login');
-const readPassword = localStorage.getItem('password');
-alert(`Thanks!\n Your login: ${readLogin}\n
-Your password: ${readPassword}`);
-responseForm.style.display = 'block';
-
-
 
 //====== CSS
+
 style.innerHTML = `
 .fieldsetClass {
 width: 400px;
@@ -135,4 +146,3 @@ border: 1px solid;
     border: none;
 
 }`;
-//-webkit-text-security: disc;
