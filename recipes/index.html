@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="script.js"></script>
+    <link defer rel="stylesheet" href="./Filter.css" />
+  </head>
+
+  <body>
+    <input class="search" type="text" value="" placeholder="Search" autofocus />
+    <!-- Добавил свой фильтр между комментами -->
+    <div class="dropdown"></div>
+    <button onclick="showFilter()" class="dropbtn">Filter..</button>
+    <div id="myDropdown" class="dropdown-content">
+      <dl>
+        <dt>Calories filter..</dt>
+        <dd class="itm">
+          MIN cal/serv<br /><input
+            class="input"
+            placeholder="input MIN calories"
+            type="input"
+            value=""
+            name="calories"
+            id="min"
+          />
+        </dd>
+        <dd class="itm">
+          MAX cal/serv<br /><input
+            class="input"
+            placeholder="input MAX calories"
+            type="input"
+            value=""
+            name="calories"
+            id="max"
+          />
+        </dd>
+      </dl>
+      <dl>
+        <dt>Diet filter..</dt>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="diet-balanced"
+            value="balanced"
+            name="diet"
+          />Balanced
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="diet-high-fiber"
+            value="high-fiber"
+            name="diet"
+          />High-Fiber
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="diet-high-protein"
+            value="high-protein"
+            name="diet"
+          />High-Protein
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="diet-low-carb"
+            value="low-carb"
+            name="diet"
+          />Low-Carb
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="diet-low-fat"
+            value="low-fat"
+            name="diet"
+          />Low-Fat
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="diet-low-sodium"
+            value="low-sodium"
+            name="diet"
+          />Low-Sodium
+        </dd>
+      </dl>
+      <dl>
+        <dt>Health filter..</dt>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-alcohol-cocktail"
+            value="alcohol-cocktail"
+            name="health"
+          />Alcohol-Cocktail
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-alcohol-free"
+            value="alcohol-free"
+            name="health"
+          />Alcohol-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-celery-free"
+            value="celery-free"
+            name="health"
+          />Celery-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-crustacean-free"
+            value="crustacean-free"
+            name="health"
+          />Crustcean-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-dairy-free"
+            value="dairy-free"
+            name="health"
+          />Dairy-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-DASH"
+            value="DASH"
+            name="health"
+          />DASH
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-egg-free"
+            value="egg-free"
+            name="health"
+          />Egg-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-fish-free"
+            value="fish-free"
+            name="health"
+          />Fish-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-fodmap-free"
+            value="fodmap-free"
+            name="health"
+          />FODMAP-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-gluten-free"
+            value="gluten-free"
+            name="health"
+          />Gluten-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-immuno-supportive"
+            value="immuno-supportive"
+            name="health"
+          />Immuno-Supportive
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-keto-friendly"
+            value="keto-friendly"
+            name="health"
+          />Keto-Friendly
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-kidney-friendly"
+            value="kidney-friendly"
+            name="health"
+          />Kidney-Friendly
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-kosher"
+            value="kosher"
+            name="health"
+          />Kosher
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-low-potassium"
+            value="low-potassium"
+            name="health"
+          />Low Potassium
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-low-sugar"
+            value="low-sugar"
+            name="health"
+          />Low Sugar
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-lupine-free"
+            value="lupine-free"
+            name="health"
+          />Lupine-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-Mediterranean"
+            value="Mediterranean"
+            name="health"
+          />Mediterranean
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-mollusk-free"
+            value="mollusk-free"
+            name="health"
+          />Mollusk-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-mustard-free"
+            value="mustard-free"
+            name="health"
+          />Mustard-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-No-oil-added"
+            value="No-oil-added"
+            name="health"
+          />No oil added
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-paleo"
+            value="paleo"
+            name="health"
+          />Paleo
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-peanut-free"
+            value="peanut-free"
+            name="health"
+          />Peanut-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-pecatarian"
+            value="pecatarian"
+            name="health"
+          />Pescatarian
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-pork-free"
+            value="pork-free"
+            name="health"
+          />Pork-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-red-meat-free"
+            value="red-meat-free"
+            name="health"
+          />Red-Meat-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-sesame-free"
+            value="red-sesame-free"
+            name="health"
+          />Sesame-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-shellfish-free"
+            value="red-shellfish-free"
+            name="health"
+          />Shellfish-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-soy-free"
+            value="soy-free"
+            name="health"
+          />Soy-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-sugar-conscious"
+            value="sugar-conscious"
+            name="health"
+          />Sugar-Conscious
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-sulfite-free"
+            value="sulfite-free"
+            name="health"
+          />Sulfite-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-tree-nut-free"
+            value="tree-nut-free"
+            name="health"
+          />Tree-Nut-Free
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-vegan"
+            value="vegan"
+            name="health"
+          />Vegan
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-vegetarian"
+            value="vegetarian"
+            name="health"
+          />Vegetarian
+        </dd>
+        <dd class="itm">
+          <input
+            type="checkbox"
+            id="health-wheat-free"
+            value="wheat-free"
+            name="health"
+          />Wheat-Free
+        </dd>
+      </dl>
+    </div>
+
+    <!-- Добавил свой фильтр между комментами -->
+    <button class="dropbtn" id="submit" type="submit" value=" " title="Search">
+      Search..
+    </button>
+
+    <!-- <input id="submit" type="submit" value=" " title="Search" /> -->
+  </body>
+</html>

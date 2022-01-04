@@ -1,0 +1,89 @@
+li {
+  display: inline-block;
+}
+
+ul {
+  margin-left: 5px;
+  padding-left: 0;
+}
+
+.input {
+  width: 130px;
+}
+
+.dropbtn {
+  margin-left: 0px;
+  background-color: #4caf50;
+  color: white;
+  padding: 3px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  min-width: 162px;
+  border-radius: 5px 5px 0px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: green;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 148px;
+  max-height: 150px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 0px 0px 5px 5px;
+  margin-left: 185px;
+}
+
+.show {
+  display: block;
+}
+
+:checked {
+  color: green;
+  font-weight: bold;
+}
+
+dl {
+  margin-left: 5px;
+  padding: 5px 0 0 0;
+}
+
+dt {
+  background: #b8c1c8;
+  border-bottom: 1px solid #989ea4;
+  border-top: 1px solid #717d85;
+  color: black;
+  font: bold 12px/16px Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0px 0 0 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+dd {
+  font: bold 12px/16px Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0 0 0 0;
+  white-space: nowrap;
+}
+
+dd + dd {
+  border-top: 1px solid #ccc;
+}
+
+#submit {
+  border-radius: 5px;
+}
